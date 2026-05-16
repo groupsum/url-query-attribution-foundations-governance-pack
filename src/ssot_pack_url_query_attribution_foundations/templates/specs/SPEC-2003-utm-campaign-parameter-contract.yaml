@@ -6,35 +6,35 @@
   "status": "active",
   "supersedes": [],
   "superseded_by": [],
-  "pack": "pack:url-query-attribution-foundations",
-  "scope": {
-    "governs": "URL, Query, Referrer, And Campaign Parameter Foundations",
-    "excludes": [
-      "Other governance packs",
-      "Downstream implementation-specific conformance claims",
-      "Repository-specific feature, claim, test, evidence, boundary, and release rows"
-    ]
-  },
-  "authority_sources": [
-    "RFC 3986: Uniform Resource Identifier (URI): Generic Syntax",
-    "WHATWG URL Standard",
-    "Google Analytics custom campaign URL parameters",
-    "GA4 traffic-source dimensions and manual tagging",
-    "GA4 default channel group"
-  ],
-  "requirements": [
-    "Treat URL, Query, Referrer, And Campaign Parameter Foundations as the only governed domain for this pack.",
-    "Do not cross-link this pack to other governance packs.",
-    "Use packaged ADR and SPEC documents as immutable authority inputs for downstream SSOT synchronization.",
-    "Create downstream features, claims, tests, evidence, risks, boundaries, and releases outside the pack metadata lifecycle."
-  ],
-  "notes": [
-    "This document was seeded from digital-analytics-customer-data-collection-sources.md.",
-    "This pack intentionally does not refer to sibling governance packs."
-  ],
   "spec_kind": "governance",
   "adr_ids": [
-    "adr:url-query-attribution-boundary",
-    "adr:referrer-and-campaign-capture-policy"
+    "adr:campaign-parameter-authority-policy"
+  ],
+  "pack": "pack:url-query-attribution-foundations",
+  "primary_target": "Google Analytics campaign URL parameter documentation",
+  "scope": {
+    "governs": [
+      "Google Analytics campaign URL parameter documentation",
+      "Attribution-relevant conformance expectations for this target"
+    ],
+    "excludes": [
+      "Sibling governance-pack references",
+      "Downstream repository-specific implementation claims",
+      "Release certification boundaries"
+    ]
+  },
+  "requirements": [
+    "Define UTM source, medium, campaign, id, term, and content parameter recognition.",
+    "Require UTM meaning to be cited to Google Analytics documentation.",
+    "Require unknown or non-UTM query parameters to remain outside UTM conformance claims."
+  ],
+  "evidence_expectations": [
+    "Source citation identifying the target document and version or retrieval date where available.",
+    "Fixture examples covering positive and negative attribution-relevant cases.",
+    "Validation output or parser/runtime evidence when implemented downstream."
+  ],
+  "notes": [
+    "This SPEC was derived from digital-analytics-customer-data-collection-sources.md.",
+    "This pack intentionally does not refer to sibling governance packs."
   ]
 }

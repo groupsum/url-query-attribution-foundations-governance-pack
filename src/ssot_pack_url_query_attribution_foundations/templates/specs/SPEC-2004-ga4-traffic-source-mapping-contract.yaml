@@ -1,0 +1,41 @@
+{
+  "id": "spc:ga4-traffic-source-mapping-contract",
+  "number": 2004,
+  "slug": "ga4-traffic-source-mapping-contract",
+  "title": "GA4 Traffic Source Mapping Contract",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:campaign-parameter-authority-policy",
+    "adr:channel-classification-boundary"
+  ],
+  "pack": "pack:url-query-attribution-foundations",
+  "primary_target": "GA4 traffic-source/manual tagging documentation",
+  "scope": {
+    "governs": [
+      "GA4 traffic-source/manual tagging documentation",
+      "Attribution-relevant conformance expectations for this target"
+    ],
+    "excludes": [
+      "Sibling governance-pack references",
+      "Downstream repository-specific implementation claims",
+      "Release certification boundaries"
+    ]
+  },
+  "requirements": [
+    "Define attribution-source mapping from manual campaign parameters to GA4 traffic-source dimensions.",
+    "Require mapping claims to stay limited to manual traffic-source fields.",
+    "Exclude full GA4 event or export schema conformance."
+  ],
+  "evidence_expectations": [
+    "Source citation identifying the target document and version or retrieval date where available.",
+    "Fixture examples covering positive and negative attribution-relevant cases.",
+    "Validation output or parser/runtime evidence when implemented downstream."
+  ],
+  "notes": [
+    "This SPEC was derived from digital-analytics-customer-data-collection-sources.md.",
+    "This pack intentionally does not refer to sibling governance packs."
+  ]
+}

@@ -36,10 +36,21 @@ URL, Query, Referrer, And Campaign Parameter Foundations
 
 ## Included SPECs
 
-- `spc:uri-query-parameter-contract` - URI Query Parameter Contract
-- `spc:referrer-policy-and-http-context-contract` - Referrer Policy And HTTP Context Contract
+- `spc:rfc3986-uri-query-syntax-contract` - RFC 3986 URI Query Syntax Contract
+- `spc:whatwg-url-parsing-contract` - WHATWG URL Parsing Contract
 - `spc:utm-campaign-parameter-contract` - UTM Campaign Parameter Contract
-- `spc:traffic-source-classification-contract` - Traffic Source Classification Contract
+- `spc:ga4-traffic-source-mapping-contract` - GA4 Traffic Source Mapping Contract
+- `spc:ga4-default-channel-classification-contract` - GA4 Default Channel Classification Contract
+- `spc:http-request-context-contract` - HTTP Request Context Contract
+- `spc:http-state-attribution-context-contract` - HTTP State Attribution Context Contract
+- `spc:http-state-modern-cookie-contract` - Modern Cookie Attribution Context Contract
+- `spc:referrer-policy-attribution-contract` - Referrer Policy Attribution Contract
+- `spc:http-caching-attribution-observability-contract` - HTTP Caching Attribution Observability Contract
+- `spc:http-structured-fields-support-contract` - HTTP Structured Fields Support Contract
+- `spc:well-known-uri-discovery-contract` - Well-Known URI Discovery Contract
+- `spc:fetch-request-attribution-context-contract` - Fetch Request Attribution Context Contract
+- `spc:html-navigation-attribution-context-contract` - HTML Navigation Attribution Context Contract
+- `spc:web-storage-attribution-context-contract` - Web Storage Attribution Context Contract
 
 ## Install With uv
 

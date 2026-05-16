@@ -1,0 +1,40 @@
+{
+  "id": "spc:well-known-uri-discovery-contract",
+  "number": 2012,
+  "slug": "well-known-uri-discovery-contract",
+  "title": "Well-Known URI Discovery Contract",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:metadata-discovery-and-structured-field-policy"
+  ],
+  "pack": "pack:url-query-attribution-foundations",
+  "primary_target": "RFC 8615 Well-Known URIs",
+  "scope": {
+    "governs": [
+      "RFC 8615 Well-Known URIs",
+      "Attribution-relevant conformance expectations for this target"
+    ],
+    "excludes": [
+      "Sibling governance-pack references",
+      "Downstream repository-specific implementation claims",
+      "Release certification boundaries"
+    ]
+  },
+  "requirements": [
+    "Define well-known URI discovery support expectations.",
+    "Require support claims to identify the exact well-known resource and behavior.",
+    "Exclude registration of new well-known URI names."
+  ],
+  "evidence_expectations": [
+    "Source citation identifying the target document and version or retrieval date where available.",
+    "Fixture examples covering positive and negative attribution-relevant cases.",
+    "Validation output or parser/runtime evidence when implemented downstream."
+  ],
+  "notes": [
+    "This SPEC was derived from digital-analytics-customer-data-collection-sources.md.",
+    "This pack intentionally does not refer to sibling governance packs."
+  ]
+}
