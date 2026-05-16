@@ -27,30 +27,11 @@ URL, Query, Referrer, And Campaign Parameter Foundations
 
 ## Included ADRs
 
-- `adr:url-query-attribution-pack-boundary` - URL Query Attribution Pack Boundary
-- `adr:campaign-parameter-authority-policy` - Campaign Parameter Authority Policy
-- `adr:referrer-request-and-session-context-policy` - Referrer Request And Session Context Policy
-- `adr:channel-classification-boundary` - Channel Classification Boundary
-- `adr:http-state-and-storage-authority-policy` - HTTP State And Storage Authority Policy
-- `adr:metadata-discovery-and-structured-field-policy` - Metadata Discovery And Structured Field Policy
+None yet. This pack has been reset pending downstream-portable ADR authoring.
 
 ## Included SPECs
 
-- `spc:rfc3986-uri-query-syntax-contract` - RFC 3986 URI Query Syntax Contract
-- `spc:whatwg-url-parsing-contract` - WHATWG URL Parsing Contract
-- `spc:utm-campaign-parameter-contract` - UTM Campaign Parameter Contract
-- `spc:ga4-traffic-source-mapping-contract` - GA4 Traffic Source Mapping Contract
-- `spc:ga4-default-channel-classification-contract` - GA4 Default Channel Classification Contract
-- `spc:http-request-context-contract` - HTTP Request Context Contract
-- `spc:http-state-attribution-context-contract` - HTTP State Attribution Context Contract
-- `spc:http-state-modern-cookie-contract` - Modern Cookie Attribution Context Contract
-- `spc:referrer-policy-attribution-contract` - Referrer Policy Attribution Contract
-- `spc:http-caching-attribution-observability-contract` - HTTP Caching Attribution Observability Contract
-- `spc:http-structured-fields-support-contract` - HTTP Structured Fields Support Contract
-- `spc:well-known-uri-discovery-contract` - Well-Known URI Discovery Contract
-- `spc:fetch-request-attribution-context-contract` - Fetch Request Attribution Context Contract
-- `spc:html-navigation-attribution-context-contract` - HTML Navigation Attribution Context Contract
-- `spc:web-storage-attribution-context-contract` - Web Storage Attribution Context Contract
+None yet. This pack has been reset pending downstream-portable SPEC authoring.
 
 ## Install With uv
 

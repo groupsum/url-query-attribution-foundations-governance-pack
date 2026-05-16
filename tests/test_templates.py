@@ -9,7 +9,6 @@ from ssot_pack_url_query_attribution_foundations import (
     load_pack_manifest,
     load_pack_metadata,
     load_pack_schema_version,
-    read_packaged_document_text,
 )
 
 
@@ -31,16 +30,12 @@ class GovernancePackManifestTests(unittest.TestCase):
     def test_pack_manifest_contract_is_exposed(self) -> None:
         manifest = load_pack_manifest()
         self.assertEqual("ssot-pack-url-query-attribution-foundations", manifest["metadata"]["origin"]["package_name"])
-        self.assertEqual(6, len(manifest["documents"]["adr"]))
-        self.assertEqual(15, len(manifest["documents"]["spec"]))
+        self.assertEqual([], manifest["documents"]["adr"])
+        self.assertEqual([], manifest["documents"]["spec"])
 
-    def test_packaged_documents_are_readable(self) -> None:
-        adr_manifest = load_document_manifest("adr")
-        spec_manifest = load_document_manifest("spec")
-        self.assertEqual("adr:url-query-attribution-pack-boundary", adr_manifest[0]["id"])
-        self.assertEqual("spc:rfc3986-uri-query-syntax-contract", spec_manifest[0]["id"])
-        self.assertIn("pack:url-query-attribution-foundations", read_packaged_document_text("adr", adr_manifest[0]["filename"]))
-        self.assertIn("pack:url-query-attribution-foundations", read_packaged_document_text("spec", spec_manifest[0]["filename"]))
+    def test_document_manifests_are_empty_pending_portable_documents(self) -> None:
+        self.assertEqual([], load_document_manifest("adr"))
+        self.assertEqual([], load_document_manifest("spec"))
 
 
 if __name__ == "__main__":
