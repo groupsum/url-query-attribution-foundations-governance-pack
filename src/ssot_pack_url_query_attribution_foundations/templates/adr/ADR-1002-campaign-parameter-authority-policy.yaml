@@ -1,0 +1,47 @@
+{
+  "id": "adr:campaign-parameter-authority-policy",
+  "number": 1002,
+  "slug": "campaign-parameter-authority-policy",
+  "title": "Campaign Parameter Authority Policy",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "pack": "pack:url-query-attribution-foundations",
+  "scope": {
+    "governs": [
+      "UTM parameter recognition",
+      "Campaign query parameter preservation",
+      "Campaign parameter normalization rules",
+      "Source, medium, campaign, term, content, and campaign-id field mapping",
+      "Limited GA4 traffic-source and channel classification semantics"
+    ],
+    "excludes": [
+      "Vendor-specific event collection beyond campaign attribution fields",
+      "Ad platform conversion upload APIs",
+      "Consent gating and privacy enforcement",
+      "Sibling governance-pack references"
+    ]
+  },
+  "authority_sources": [
+    "RFC 3986 URI Generic Syntax",
+    "WHATWG URL Standard",
+    "Google Analytics campaign URL parameter documentation",
+    "GA4 traffic-source/manual tagging documentation",
+    "GA4 default channel group documentation"
+  ],
+  "decision": [
+    "URL and URI standards govern whether campaign parameters are syntactically valid query members.",
+    "Google Analytics documentation governs the practical semantics of UTM parameters.",
+    "GA4 traffic-source and channel documents govern GA4-specific attribution classification outputs.",
+    "This pack must keep syntax validation separate from attribution meaning."
+  ],
+  "consequences": [
+    "utm_source is treated as an application-defined query parameter with Google-defined analytics meaning.",
+    "Query parsing must not assume UTM parameters are reserved by IETF, WHATWG, or W3C.",
+    "Classification claims must cite the vendor classification source separately from URL syntax sources."
+  ],
+  "notes": [
+    "This document was seeded from digital-analytics-customer-data-collection-sources.md.",
+    "This pack intentionally does not refer to sibling governance packs."
+  ]
+}

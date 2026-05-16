@@ -1,0 +1,45 @@
+{
+  "id": "adr:channel-classification-boundary",
+  "number": 1004,
+  "slug": "channel-classification-boundary",
+  "title": "Channel Classification Boundary",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "pack": "pack:url-query-attribution-foundations",
+  "scope": {
+    "governs": [
+      "Manual source mapping",
+      "Manual medium mapping",
+      "Campaign attribution fields",
+      "Default channel group classification inputs",
+      "Classification evidence examples"
+    ],
+    "excludes": [
+      "GA4 Measurement Protocol",
+      "GA4 event schemas",
+      "GA4 BigQuery export schema",
+      "Google tag runtime behavior",
+      "Sibling governance-pack references"
+    ]
+  },
+  "authority_sources": [
+    "GA4 traffic-source/manual tagging documentation",
+    "GA4 default channel group documentation",
+    "Google Analytics campaign URL parameter documentation"
+  ],
+  "decision": [
+    "This pack governs GA4 traffic-source and default-channel classification only as attribution classification targets.",
+    "The pack does not govern the full GA4 data model, event collection lifecycle, reporting UI, or BigQuery export behavior.",
+    "Classification behavior must remain traceable to the GA4 traffic-source and channel documentation."
+  ],
+  "consequences": [
+    "GA4 classification rows in this pack must be narrow and attribution-specific.",
+    "GA4 event or export conformance must not be asserted from this pack.",
+    "Downstream consumers can use this pack to validate classification inputs without adopting a full GA4 governance surface."
+  ],
+  "notes": [
+    "This document was seeded from digital-analytics-customer-data-collection-sources.md.",
+    "This pack intentionally does not refer to sibling governance packs."
+  ]
+}

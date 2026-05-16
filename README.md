@@ -27,8 +27,12 @@ URL, Query, Referrer, And Campaign Parameter Foundations
 
 ## Included ADRs
 
-- `adr:url-query-attribution-boundary` - URL Query Attribution Boundary
-- `adr:referrer-and-campaign-capture-policy` - Referrer And Campaign Capture Policy
+- `adr:url-query-attribution-pack-boundary` - URL Query Attribution Pack Boundary
+- `adr:campaign-parameter-authority-policy` - Campaign Parameter Authority Policy
+- `adr:referrer-request-and-session-context-policy` - Referrer Request And Session Context Policy
+- `adr:channel-classification-boundary` - Channel Classification Boundary
+- `adr:http-state-and-storage-authority-policy` - HTTP State And Storage Authority Policy
+- `adr:metadata-discovery-and-structured-field-policy` - Metadata Discovery And Structured Field Policy
 
 ## Included SPECs
 
