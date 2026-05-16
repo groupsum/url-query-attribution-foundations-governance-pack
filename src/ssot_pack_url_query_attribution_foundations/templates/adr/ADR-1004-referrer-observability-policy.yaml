@@ -1,0 +1,37 @@
+{
+  "id": "adr:referrer-observability-policy",
+  "number": 1004,
+  "slug": "referrer-observability-policy",
+  "title": "Referrer Observability Policy",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "context": [
+    "Attribution systems often use referrer and request context to infer traffic origin when campaign parameters are absent or incomplete.",
+    "Browser and HTTP standards can reduce, suppress, or transform referrer information.",
+    "Downstream repositories need to treat missing or reduced referrer context as an expected observable state when standards or clients cause it."
+  ],
+  "authority_sources": [
+    "W3C Referrer Policy",
+    "RFC 9110: HTTP Semantics",
+    "WHATWG Fetch",
+    "WHATWG HTML navigation and referrer integration"
+  ],
+  "decision": [
+    "This repository treats referrer information as attribution observability context, not as guaranteed attribution input.",
+    "Referrer policy is the authority for when referrer data is sent, reduced, or omitted.",
+    "HTTP, Fetch, and HTML navigation behavior define the request and navigation contexts in which referrer observations occur.",
+    "Implementations must distinguish observed absence or reduction of referrer data from parser or collector failure."
+  ],
+  "consequences": [
+    "Implementations can record full referrer, origin-only referrer, reduced referrer, absent referrer, and intentionally suppressed referrer as different evidence states.",
+    "Implementations should not overwrite explicit campaign parameters solely because referrer context is present.",
+    "Tests should cover policy-driven suppression, cross-origin reduction, redirect or navigation effects, and absent-referrer fallback behavior."
+  ],
+  "exclusions": [
+    "Browser-specific anti-tracking policy beyond cited standards",
+    "Consent authorization to collect referrer data",
+    "Full identity resolution",
+    "Advertising attribution APIs"
+  ]
+}

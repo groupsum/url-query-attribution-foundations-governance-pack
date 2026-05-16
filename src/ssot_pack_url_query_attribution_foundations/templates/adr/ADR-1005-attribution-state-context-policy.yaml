@@ -1,0 +1,37 @@
+{
+  "id": "adr:attribution-state-context-policy",
+  "number": 1005,
+  "slug": "attribution-state-context-policy",
+  "title": "Attribution State Context Policy",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "context": [
+    "Campaign attribution often requires short-lived or session-scoped context to connect landing-page observations to later events.",
+    "Cookies and browser storage can carry attribution context, but their availability and behavior depend on web platform standards and user-agent policy.",
+    "Downstream repositories need a decision that governs state shape and observability without deciding whether collecting or storing that state is legally permitted."
+  ],
+  "authority_sources": [
+    "RFC 6265: HTTP State Management Mechanism",
+    "draft-ietf-httpbis-rfc6265bis",
+    "Web Storage"
+  ],
+  "decision": [
+    "This repository treats cookies and Web Storage as attribution state carriers when a downstream implementation chooses to persist attribution context.",
+    "RFC 6265 is the baseline authority for HTTP cookie syntax and behavior.",
+    "draft-ietf-httpbis-rfc6265bis is tracked as the modern cookie behavior authority for current cookie attributes and SameSite-sensitive behavior.",
+    "Web Storage is the authority for localStorage and sessionStorage attribution context when client-side storage is used.",
+    "State availability, absence, rejection, expiry, and clearing must be modeled as normal runtime outcomes."
+  ],
+  "consequences": [
+    "Implementations can test attribution continuity across requests or browser interactions where state is available.",
+    "Implementations must handle unavailable or cleared state without treating that outcome as nonconformance by itself.",
+    "Tests should cover cookie attributes, expiry, SameSite-sensitive cases, localStorage, sessionStorage, and disabled or unavailable storage."
+  ],
+  "exclusions": [
+    "Consent validity for writing or reading state",
+    "Privacy-law compliance determinations",
+    "Cross-device identity stitching",
+    "Opaque vendor identity graphs"
+  ]
+}

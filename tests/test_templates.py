@@ -9,6 +9,7 @@ from ssot_pack_url_query_attribution_foundations import (
     load_pack_manifest,
     load_pack_metadata,
     load_pack_schema_version,
+    read_packaged_document_text,
 )
 
 
@@ -30,11 +31,18 @@ class GovernancePackManifestTests(unittest.TestCase):
     def test_pack_manifest_contract_is_exposed(self) -> None:
         manifest = load_pack_manifest()
         self.assertEqual("ssot-pack-url-query-attribution-foundations", manifest["metadata"]["origin"]["package_name"])
-        self.assertEqual([], manifest["documents"]["adr"])
+        self.assertEqual(6, len(manifest["documents"]["adr"]))
         self.assertEqual([], manifest["documents"]["spec"])
 
-    def test_document_manifests_are_empty_pending_portable_documents(self) -> None:
-        self.assertEqual([], load_document_manifest("adr"))
+    def test_packaged_adr_documents_are_downstream_portable(self) -> None:
+        adr_manifest = load_document_manifest("adr")
+        self.assertEqual("adr:uri-query-attribution-boundary", adr_manifest[0]["id"])
+        for row in adr_manifest:
+            text = read_packaged_document_text("adr", row["filename"])
+            self.assertNotIn("pack:", text)
+            self.assertNotIn("This pack", text)
+
+    def test_spec_manifest_is_empty_pending_portable_documents(self) -> None:
         self.assertEqual([], load_document_manifest("spec"))
 
 

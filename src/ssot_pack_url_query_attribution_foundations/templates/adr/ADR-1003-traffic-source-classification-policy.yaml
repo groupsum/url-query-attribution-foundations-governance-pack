@@ -1,0 +1,36 @@
+{
+  "id": "adr:traffic-source-classification-policy",
+  "number": 1003,
+  "slug": "traffic-source-classification-policy",
+  "title": "Traffic Source Classification Policy",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "context": [
+    "Downstream analytics systems often classify visits or events into traffic sources and channel groups after campaign parameters are parsed.",
+    "Classification is a separate concern from URL parsing and campaign parameter recognition.",
+    "GA4 documentation provides commonly used traffic-source and default-channel classification targets."
+  ],
+  "authority_sources": [
+    "GA4 traffic-source dimensions, manual tagging, and auto-tagging",
+    "GA4 default channel group",
+    "Google Analytics: Collect campaign data with custom URLs"
+  ],
+  "decision": [
+    "This repository treats traffic-source and channel classification as governed attribution outputs derived from campaign, referrer, and request context.",
+    "GA4 traffic-source documentation is the authority for GA4 source, medium, campaign, and related manual-tagging mappings.",
+    "GA4 default channel group documentation is the authority for GA4 channel classification expectations.",
+    "Classification decisions must remain traceable to their classification authority and must not be presented as generic URL parsing requirements."
+  ],
+  "consequences": [
+    "Implementations can expose classification features independently from raw parameter parsing features.",
+    "Implementations should keep source, medium, campaign, and channel evidence distinct enough to debug classification outcomes.",
+    "Tests should include representative source/medium pairs, campaign overrides, direct or unassigned cases, and classification changes caused by missing context."
+  ],
+  "exclusions": [
+    "GA4 Measurement Protocol ingestion",
+    "GA4 BigQuery export schema",
+    "Ad platform bidding or conversion APIs",
+    "Cross-channel attribution modeling"
+  ]
+}

@@ -27,7 +27,12 @@ URL, Query, Referrer, And Campaign Parameter Foundations
 
 ## Included ADRs
 
-None yet. This pack has been reset pending downstream-portable ADR authoring.
+- `adr:uri-query-attribution-boundary` - URI Query Attribution Boundary
+- `adr:campaign-parameter-semantics-authority` - Campaign Parameter Semantics Authority
+- `adr:traffic-source-classification-policy` - Traffic Source Classification Policy
+- `adr:referrer-observability-policy` - Referrer Observability Policy
+- `adr:attribution-state-context-policy` - Attribution State Context Policy
+- `adr:http-metadata-discovery-policy` - HTTP Metadata Discovery Policy
 
 ## Included SPECs
 

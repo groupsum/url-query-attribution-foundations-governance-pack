@@ -1,0 +1,37 @@
+{
+  "id": "adr:http-metadata-discovery-policy",
+  "number": 1006,
+  "slug": "http-metadata-discovery-policy",
+  "title": "HTTP Metadata Discovery Policy",
+  "status": "accepted",
+  "supersedes": [],
+  "superseded_by": [],
+  "context": [
+    "Some downstream systems expose or consume machine-readable metadata related to attribution, measurement, or collection capabilities.",
+    "HTTP structured fields and well-known URIs provide generic mechanisms for interoperable metadata exchange.",
+    "These mechanisms are infrastructure support surfaces and do not define campaign parameter or GA4 semantics."
+  ],
+  "authority_sources": [
+    "RFC 8615: Well-Known Uniform Resource Identifiers",
+    "RFC 8941: Structured Field Values for HTTP",
+    "RFC 9110: HTTP Semantics"
+  ],
+  "decision": [
+    "This repository treats well-known URIs and structured HTTP fields as optional attribution metadata discovery mechanisms.",
+    "RFC 8615 is the authority for well-known URI discovery patterns.",
+    "RFC 8941 is the authority for structured HTTP field parsing and serialization.",
+    "RFC 9110 is the authority for HTTP semantics around requests, responses, fields, and resources.",
+    "Implementations must state whether they consume, emit, preserve, or validate metadata that uses these mechanisms."
+  ],
+  "consequences": [
+    "Implementations can support machine-readable attribution metadata without treating that support as required campaign parameter behavior.",
+    "Implementations must not define new well-known names or HTTP fields without a separate downstream decision and registration strategy.",
+    "Tests should cover present metadata, absent metadata, malformed structured fields, and unsupported discovery endpoints."
+  ],
+  "exclusions": [
+    "Defining new IANA well-known URI registrations",
+    "Defining new permanent HTTP field names",
+    "Campaign query parameter semantics",
+    "GA4 event or export schema governance"
+  ]
+}
