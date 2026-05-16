@@ -1,0 +1,34 @@
+schema_version: 9
+kind: "spec"
+id: "spc:2003"
+number: 2003
+slug: "traffic-source-classification-target-curation"
+title: "Traffic Source Classification Target Curation"
+status: "accepted"
+origin: "repo-local"
+decision_date: null
+tags: []
+summary: "This specification governs inclusion of GA4 traffic-source and default-channel classification targets in `pack:url-query-attribution-foundations`."
+supersedes: []
+superseded_by: []
+status_notes: []
+references: []
+body: |-
+  ## Scope
+  
+  This specification governs inclusion of GA4 traffic-source and default-channel classification targets in `pack:url-query-attribution-foundations`.
+  
+  ## Requirements
+  
+  - The pack MUST include GA4 traffic-source dimensions, manual tagging, and auto-tagging documentation only for attribution classification inputs and outputs.
+  - The pack MUST include GA4 default channel group documentation only for source, medium, campaign, and referrer-derived channel classification expectations.
+  - The pack MUST treat GA4 classification as a vendor-defined classification target, not a general web standard.
+  - The pack MUST not claim full GA4 conformance from traffic-source or channel classification templates.
+  - The pack MUST exclude GA4 Measurement Protocol, GA4 event schemas, Google tag runtime APIs, and GA4 BigQuery export schema from this pack unless a new repo-local decision expands scope.
+  
+  ## Evidence Expectations
+  
+  - Classification templates must preserve traceability from raw captured context to classification output.
+  - Classification templates must document whether they align with GA4 behavior or an explicit downstream subset.
+  - Classification templates must include negative or fallback cases for missing campaign and referrer context.
+spec_kind: "governance"

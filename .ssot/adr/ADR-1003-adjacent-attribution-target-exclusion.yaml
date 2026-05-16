@@ -1,0 +1,29 @@
+schema_version: 9
+kind: "adr"
+id: "adr:1003"
+number: 1003
+slug: "adjacent-attribution-target-exclusion"
+title: "Adjacent Attribution Target Exclusion"
+status: "accepted"
+origin: "repo-local"
+decision_date: null
+tags: []
+summary: "The research source file includes many attribution-adjacent targets: W3C Attribution Reporting, IAB Tech Lab ADMaP and ECAPI, Google Ads click conversion uploads, Microsoft Advertising UET CAPI, Apple AdAttributionKit, Google Play Install Referrer, Privacy Sandbox on Android, Meta Conversions API, TikTok Events API, LinkedIn Conversions API, consent frameworks, identity standards, customer data schemas, and broader analytics event protocols."
+supersedes: []
+superseded_by: []
+status_notes: []
+references: []
+body: |-
+  ## Context
+  
+  The research source file includes many attribution-adjacent targets: W3C Attribution Reporting, IAB Tech Lab ADMaP and ECAPI, Google Ads click conversion uploads, Microsoft Advertising UET CAPI, Apple AdAttributionKit, Google Play Install Referrer, Privacy Sandbox on Android, Meta Conversions API, TikTok Events API, LinkedIn Conversions API, consent frameworks, identity standards, customer data schemas, and broader analytics event protocols.
+  
+  Those sources matter to digital analytics and customer data collection, but they do not all govern URL query attribution foundations.
+  
+  ## Decision
+  
+  This repository will exclude adjacent targets unless they directly govern one of this pack's URL query attribution foundation surfaces.
+  
+  Excluded targets include ad platform conversion upload APIs, privacy-preserving advertising attribution APIs, mobile install attribution frameworks, consent and privacy signal systems, customer identity/profile systems, customer data layer models, and broad event ingestion protocols.
+  
+  Excluded targets may be listed in research notes or future pack planning, but they must not be added to this pack's packaged ADR/SPEC templates without a new repo-local decision.

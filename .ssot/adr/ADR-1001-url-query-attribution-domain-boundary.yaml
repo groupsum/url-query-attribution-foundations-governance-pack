@@ -1,0 +1,29 @@
+schema_version: 9
+kind: "adr"
+id: "adr:1001"
+number: 1001
+slug: "url-query-attribution-domain-boundary"
+title: "URL Query Attribution Domain Boundary"
+status: "accepted"
+origin: "repo-local"
+decision_date: null
+tags: []
+summary: "The `pack:url-query-attribution-foundations` pack curates governance templates for landing-page URL attribution foundations. Its source set includes URL and URI syntax, browser URL parsing, Google Analytics campaign URL parameters, GA4 traffic-source and default-channel classification, HTTP request/referrer context, cookie and storage state, caching effects, structured HTTP fields, and well-known URI discovery."
+supersedes: []
+superseded_by: []
+status_notes: []
+references: []
+body: |-
+  ## Context
+  
+  The `pack:url-query-attribution-foundations` pack curates governance templates for landing-page URL attribution foundations. Its source set includes URL and URI syntax, browser URL parsing, Google Analytics campaign URL parameters, GA4 traffic-source and default-channel classification, HTTP request/referrer context, cookie and storage state, caching effects, structured HTTP fields, and well-known URI discovery.
+  
+  Adjacent digital analytics subjects are intentionally outside this pack when they govern event ingestion, ad conversion upload, consent signaling, customer identity, mobile install attribution, or broader customer data modeling.
+  
+  ## Decision
+  
+  This repository will curate only URL, query, referrer, HTTP-context, campaign-parameter, attribution-state, and narrow traffic-source classification foundations for `pack:url-query-attribution-foundations`.
+  
+  The pack will not curate full GA4 event collection, Google tag runtime APIs, advertising conversion APIs, consent/privacy signal standards, customer identity/profile governance, or mobile install attribution targets.
+  
+  Packaged templates in this repository may reference standards and vendor documentation only when those sources directly support URL query attribution foundations.

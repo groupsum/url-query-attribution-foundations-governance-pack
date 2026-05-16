@@ -1,0 +1,35 @@
+schema_version: 9
+kind: "spec"
+id: "spc:2001"
+number: 2001
+slug: "url-query-and-campaign-target-curation"
+title: "URL Query And Campaign Target Curation"
+status: "accepted"
+origin: "repo-local"
+decision_date: null
+tags: []
+summary: "This specification governs source inclusion for URL syntax, browser URL parsing, and campaign query parameter semantics in `pack:url-query-attribution-foundations`."
+supersedes: []
+superseded_by: []
+status_notes: []
+references: []
+body: |-
+  ## Scope
+  
+  This specification governs source inclusion for URL syntax, browser URL parsing, and campaign query parameter semantics in `pack:url-query-attribution-foundations`.
+  
+  ## Requirements
+  
+  - The pack MUST include RFC 3986 as the generic URI query syntax authority.
+  - The pack MUST include the WHATWG URL Standard as the browser URL parsing and URLSearchParams authority.
+  - The pack MUST include Google Analytics campaign URL parameter documentation for UTM parameter semantics.
+  - The pack MUST treat `utm_source`, `utm_medium`, `utm_campaign`, `utm_id`, `utm_term`, and `utm_content` as analytics-defined query parameters, not reserved URI parameters.
+  - The pack MUST keep URL parser requirements separate from campaign parameter semantic requirements.
+  - The pack MUST exclude generic query parameters from campaign semantics unless an authority source defines their attribution meaning.
+  
+  ## Evidence Expectations
+  
+  - A source row in the research source file for each included target.
+  - Packaged ADR/SPEC templates that cite the authority role of each included target.
+  - Negative review notes for query or campaign targets that belong to broader ad platform conversion, identity, or event-ingestion surfaces.
+spec_kind: "governance"

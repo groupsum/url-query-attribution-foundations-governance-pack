@@ -1,0 +1,32 @@
+schema_version: 9
+kind: "adr"
+id: "adr:1002"
+number: 1002
+slug: "attribution-authority-source-stratification"
+title: "Attribution Authority Source Stratification"
+status: "accepted"
+origin: "repo-local"
+decision_date: null
+tags: []
+summary: "The pack combines formal/open web standards with vendor analytics documentation. These sources do not have the same role. RFC 3986 and the WHATWG URL Standard define URI and browser URL behavior. Google Analytics and GA4 documentation define campaign parameter and traffic-source semantics. HTTP, Fetch, HTML, Referrer Policy, cookie, storage, caching, structured-field, and well-known URI standards define surrounding attribution context and observability mechanisms."
+supersedes: []
+superseded_by: []
+status_notes: []
+references: []
+body: |-
+  ## Context
+  
+  The pack combines formal/open web standards with vendor analytics documentation. These sources do not have the same role. RFC 3986 and the WHATWG URL Standard define URI and browser URL behavior. Google Analytics and GA4 documentation define campaign parameter and traffic-source semantics. HTTP, Fetch, HTML, Referrer Policy, cookie, storage, caching, structured-field, and well-known URI standards define surrounding attribution context and observability mechanisms.
+  
+  Mixing those authority layers can create false claims, such as treating UTM names as IETF-reserved parameters or treating GA4 classification as generic URL syntax.
+  
+  ## Decision
+  
+  This repository will stratify authority sources by role:
+  
+  - RFC 3986 and WHATWG URL govern URL and query syntax.
+  - Google Analytics campaign URL documentation governs UTM campaign parameter semantics.
+  - GA4 traffic-source and default-channel documentation governs GA4-oriented attribution classification targets.
+  - HTTP, Fetch, HTML navigation, Referrer Policy, cookie, Web Storage, caching, structured-field, and well-known URI sources govern attribution context and observability.
+  
+  Packaged templates must preserve this distinction when assigning requirements to downstream implementations.

@@ -1,0 +1,34 @@
+schema_version: 9
+kind: "spec"
+id: "spc:2004"
+number: 2004
+slug: "adjacent-target-exclusion-review"
+title: "Adjacent Target Exclusion Review"
+status: "accepted"
+origin: "repo-local"
+decision_date: null
+tags: []
+summary: "This specification governs review of candidate sources that are related to digital analytics, marketing attribution, campaign measurement, web analytics, app analytics, event tracking, behavioral telemetry, customer data collection, consent, identity, or advertising measurement but may be outside `pack:url-query-attribution-foundations`."
+supersedes: []
+superseded_by: []
+status_notes: []
+references: []
+body: |-
+  ## Scope
+  
+  This specification governs review of candidate sources that are related to digital analytics, marketing attribution, campaign measurement, web analytics, app analytics, event tracking, behavioral telemetry, customer data collection, consent, identity, or advertising measurement but may be outside `pack:url-query-attribution-foundations`.
+  
+  ## Requirements
+  
+  - Candidate targets MUST be accepted only when they directly govern URL query attribution foundations.
+  - Candidate targets MUST be rejected or deferred when they primarily govern event ingestion, advertising conversion upload, privacy-preserving ad measurement APIs, mobile install attribution, consent signaling, identity/profile data, customer data modeling, or broad telemetry envelopes.
+  - Candidate targets MUST be reviewed against the current domain boundary before packaged ADR/SPEC templates are changed.
+  - Review notes SHOULD identify the more appropriate future pack family when a target is excluded.
+  - Exclusion from this pack MUST NOT be interpreted as exclusion from the broader digital analytics governance program.
+  
+  ## Evidence Expectations
+  
+  - Review records should identify the candidate source, authority owner, target surface, inclusion decision, and exclusion or deferral reason.
+  - Included targets should map to at least one packaged ADR or SPEC template.
+  - Excluded targets should remain absent from packaged templates unless superseded by a later repo-local ADR.
+spec_kind: "governance"
