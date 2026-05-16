@@ -1,0 +1,39 @@
+{
+  "id": "spc:referrer-policy-observability-requirements",
+  "number": 2006,
+  "slug": "referrer-policy-observability-requirements",
+  "title": "Referrer Policy Observability Requirements",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:referrer-observability-policy"
+  ],
+  "primary_targets": [
+    "W3C Referrer Policy"
+  ],
+  "scope": {
+    "governs": [
+      "Referrer availability as attribution context",
+      "Reduced, origin-only, absent, and suppressed referrer states",
+      "Fallback behavior when referrer context is unavailable"
+    ],
+    "excludes": [
+      "Browser-specific anti-tracking systems",
+      "Consent validity for referrer collection",
+      "User identity resolution"
+    ]
+  },
+  "requirements": [
+    "Implementations MUST represent full referrer, reduced referrer, origin-only referrer, absent referrer, and intentionally suppressed referrer as distinguishable evidence states when observable.",
+    "Implementations MUST not treat standards-driven referrer absence as parser failure by default.",
+    "Implementations MUST define precedence between explicit campaign parameters and referrer-derived attribution context.",
+    "Implementations SHOULD provide diagnostics that explain why referrer context was unavailable when that can be known."
+  ],
+  "evidence_expectations": [
+    "Fixtures for referrer policy values and expected observable referrer states.",
+    "Request or browser-context examples showing full, reduced, and absent referrer behavior.",
+    "Classification or fallback outputs showing how referrer absence affects attribution."
+  ]
+}

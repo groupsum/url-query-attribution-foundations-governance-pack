@@ -1,0 +1,40 @@
+{
+  "id": "spc:campaign-query-parameter-requirements",
+  "number": 2002,
+  "slug": "campaign-query-parameter-requirements",
+  "title": "Campaign Query Parameter Requirements",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:campaign-parameter-semantics-authority",
+    "adr:uri-query-attribution-boundary"
+  ],
+  "primary_targets": [
+    "Google Analytics: Collect campaign data with custom URLs"
+  ],
+  "scope": {
+    "governs": [
+      "UTM campaign parameter recognition",
+      "Campaign parameter field mapping",
+      "Required and optional campaign parameter evidence"
+    ],
+    "excludes": [
+      "Google tag runtime commands",
+      "GA4 event ingestion",
+      "Ad click identifier upload APIs"
+    ]
+  },
+  "requirements": [
+    "Implementations MUST recognize utm_source, utm_medium, utm_campaign, utm_id, utm_term, and utm_content when those fields are in downstream scope.",
+    "Implementations MUST keep campaign parameter semantic mapping separate from URL parser validity.",
+    "Implementations MUST define how duplicate campaign parameters, empty campaign values, missing campaign values, and unknown query parameters are handled.",
+    "Implementations SHOULD preserve non-campaign query parameters unless a downstream filtering requirement explicitly removes them."
+  ],
+  "evidence_expectations": [
+    "Fixture URLs containing each governed campaign parameter.",
+    "Mapping output from query parameters to downstream campaign fields.",
+    "Negative fixtures covering absent, duplicate, empty, and unknown query members."
+  ]
+}

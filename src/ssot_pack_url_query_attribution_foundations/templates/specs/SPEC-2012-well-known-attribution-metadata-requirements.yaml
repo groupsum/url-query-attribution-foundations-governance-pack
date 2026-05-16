@@ -1,0 +1,40 @@
+{
+  "id": "spc:well-known-attribution-metadata-requirements",
+  "number": 2012,
+  "slug": "well-known-attribution-metadata-requirements",
+  "title": "Well-Known Attribution Metadata Requirements",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:http-metadata-discovery-policy"
+  ],
+  "primary_targets": [
+    "RFC 8615: Well-Known Uniform Resource Identifiers",
+    "RFC 9110: HTTP Semantics"
+  ],
+  "scope": {
+    "governs": [
+      "Well-known URI discovery behavior for attribution-related metadata",
+      "Present, absent, unsupported, malformed, and unreachable metadata discovery states",
+      "Evidence for declared consume, emit, preserve, or validate behavior"
+    ],
+    "excludes": [
+      "Defining new well-known URI registrations",
+      "Campaign query parameter semantics",
+      "Advertising supply-chain metadata"
+    ]
+  },
+  "requirements": [
+    "Implementations MUST declare whether well-known attribution metadata discovery is supported, unsupported, or out of scope.",
+    "Implementations MUST use RFC 8615 well-known URI patterns when they expose or consume attribution-related well-known resources.",
+    "Implementations MUST handle present, absent, unsupported, malformed, and unreachable metadata endpoints as explicit outcomes.",
+    "Implementations MUST not require well-known metadata discovery for basic URL query attribution unless a downstream decision explicitly makes it mandatory."
+  ],
+  "evidence_expectations": [
+    "Discovery fixtures for present, absent, malformed, and unreachable well-known resources.",
+    "HTTP request and response traces for discovery behavior.",
+    "Validation report identifying consume, emit, preserve, validate, unsupported, or out-of-scope behavior."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "spc:ga4-traffic-source-mapping-requirements",
+  "number": 2003,
+  "slug": "ga4-traffic-source-mapping-requirements",
+  "title": "GA4 Traffic Source Mapping Requirements",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:campaign-parameter-semantics-authority",
+    "adr:traffic-source-classification-policy"
+  ],
+  "primary_targets": [
+    "GA4 traffic-source dimensions, manual tagging, and auto-tagging"
+  ],
+  "scope": {
+    "governs": [
+      "GA4 manual traffic-source mapping from campaign parameters",
+      "Source, medium, campaign, content, term, and campaign ID attribution fields",
+      "Traceability from captured parameters to traffic-source outputs"
+    ],
+    "excludes": [
+      "GA4 Measurement Protocol payload validation",
+      "GA4 BigQuery export schema",
+      "Google Ads auto-tagging conversion upload behavior"
+    ]
+  },
+  "requirements": [
+    "Implementations MUST identify which captured campaign fields are mapped into GA4 traffic-source concepts.",
+    "Implementations MUST keep raw captured campaign values traceable to any normalized GA4 traffic-source output.",
+    "Implementations MUST document precedence when both manual campaign parameters and other traffic-source context are available.",
+    "Implementations MUST not claim full GA4 conformance from traffic-source mapping alone."
+  ],
+  "evidence_expectations": [
+    "Fixture inputs containing manual campaign parameters.",
+    "Expected traffic-source mapping output for each governed field.",
+    "Trace output linking raw query capture to normalized classification fields."
+  ]
+}

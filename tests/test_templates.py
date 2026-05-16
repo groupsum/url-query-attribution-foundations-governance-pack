@@ -32,7 +32,7 @@ class GovernancePackManifestTests(unittest.TestCase):
         manifest = load_pack_manifest()
         self.assertEqual("ssot-pack-url-query-attribution-foundations", manifest["metadata"]["origin"]["package_name"])
         self.assertEqual(6, len(manifest["documents"]["adr"]))
-        self.assertEqual([], manifest["documents"]["spec"])
+        self.assertEqual(12, len(manifest["documents"]["spec"]))
 
     def test_packaged_adr_documents_are_downstream_portable(self) -> None:
         adr_manifest = load_document_manifest("adr")
@@ -42,8 +42,13 @@ class GovernancePackManifestTests(unittest.TestCase):
             self.assertNotIn("pack:", text)
             self.assertNotIn("This pack", text)
 
-    def test_spec_manifest_is_empty_pending_portable_documents(self) -> None:
-        self.assertEqual([], load_document_manifest("spec"))
+    def test_packaged_spec_documents_are_downstream_portable(self) -> None:
+        spec_manifest = load_document_manifest("spec")
+        self.assertEqual("spc:uri-query-syntax-requirements", spec_manifest[0]["id"])
+        for row in spec_manifest:
+            text = read_packaged_document_text("spec", row["filename"])
+            self.assertNotIn("pack:", text)
+            self.assertNotIn("This pack", text)
 
 
 if __name__ == "__main__":

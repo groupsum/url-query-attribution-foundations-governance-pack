@@ -36,7 +36,18 @@ URL, Query, Referrer, And Campaign Parameter Foundations
 
 ## Included SPECs
 
-None yet. This pack has been reset pending downstream-portable SPEC authoring.
+- `spc:uri-query-syntax-requirements` - URI Query Syntax Requirements
+- `spc:campaign-query-parameter-requirements` - Campaign Query Parameter Requirements
+- `spc:ga4-traffic-source-mapping-requirements` - GA4 Traffic Source Mapping Requirements
+- `spc:default-channel-classification-requirements` - Default Channel Classification Requirements
+- `spc:http-request-attribution-context-requirements` - HTTP Request Attribution Context Requirements
+- `spc:referrer-policy-observability-requirements` - Referrer Policy Observability Requirements
+- `spc:fetch-navigation-attribution-context-requirements` - Fetch And Navigation Attribution Context Requirements
+- `spc:cookie-attribution-state-requirements` - Cookie Attribution State Requirements
+- `spc:web-storage-attribution-state-requirements` - Web Storage Attribution State Requirements
+- `spc:http-caching-attribution-observability-requirements` - HTTP Caching Attribution Observability Requirements
+- `spc:structured-field-attribution-metadata-requirements` - Structured Field Attribution Metadata Requirements
+- `spc:well-known-attribution-metadata-requirements` - Well-Known Attribution Metadata Requirements
 
 ## Install With uv
 

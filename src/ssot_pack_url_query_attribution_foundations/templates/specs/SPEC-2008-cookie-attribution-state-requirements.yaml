@@ -1,0 +1,40 @@
+{
+  "id": "spc:cookie-attribution-state-requirements",
+  "number": 2008,
+  "slug": "cookie-attribution-state-requirements",
+  "title": "Cookie Attribution State Requirements",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:attribution-state-context-policy"
+  ],
+  "primary_targets": [
+    "RFC 6265: HTTP State Management Mechanism",
+    "draft-ietf-httpbis-rfc6265bis"
+  ],
+  "scope": {
+    "governs": [
+      "Cookie-backed attribution state shape and availability",
+      "Cookie attributes relevant to attribution continuity",
+      "Expired, blocked, missing, malformed, and unavailable cookie states"
+    ],
+    "excludes": [
+      "Consent validity for cookie access",
+      "Cross-device identity graphs",
+      "Opaque vendor cookie schemas"
+    ]
+  },
+  "requirements": [
+    "Implementations MUST define the cookie fields or cookie-derived fields used as attribution state.",
+    "Implementations MUST handle missing, expired, rejected, malformed, and unavailable cookies as explicit runtime states.",
+    "Implementations MUST document any SameSite, Secure, Domain, Path, or expiry assumptions that affect attribution continuity.",
+    "Implementations MUST not treat cookie availability as proof that attribution state collection is legally authorized."
+  ],
+  "evidence_expectations": [
+    "Cookie fixtures covering attribute combinations, expiry, absence, and malformed values.",
+    "Runtime examples showing attribution state continuity and loss.",
+    "Validation output distinguishing cookie parsing failure from unavailable state."
+  ]
+}

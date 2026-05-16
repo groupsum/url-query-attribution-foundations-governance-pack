@@ -1,0 +1,39 @@
+{
+  "id": "spc:structured-field-attribution-metadata-requirements",
+  "number": 2011,
+  "slug": "structured-field-attribution-metadata-requirements",
+  "title": "Structured Field Attribution Metadata Requirements",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:http-metadata-discovery-policy"
+  ],
+  "primary_targets": [
+    "RFC 8941: Structured Field Values for HTTP"
+  ],
+  "scope": {
+    "governs": [
+      "Attribution metadata represented with structured HTTP field values",
+      "Structured field parsing, serialization, malformed field handling, and evidence",
+      "Declared consume, emit, preserve, or validate behavior"
+    ],
+    "excludes": [
+      "Defining new permanent HTTP field registrations",
+      "Campaign query parameter semantics",
+      "GA4 event schema governance"
+    ]
+  },
+  "requirements": [
+    "Implementations MUST use RFC 8941 parsing and serialization rules for attribution metadata represented as structured HTTP fields.",
+    "Implementations MUST declare whether they consume, emit, preserve, validate, or ignore structured attribution metadata.",
+    "Implementations MUST treat malformed structured fields as explicit validation outcomes.",
+    "Implementations MUST not treat structured-field support as a substitute for campaign query parameter handling."
+  ],
+  "evidence_expectations": [
+    "Structured field fixtures covering valid lists, dictionaries, items, parameters, and malformed inputs.",
+    "Parser or serializer output for each supported structured metadata field.",
+    "Validation report identifying consume, emit, preserve, validate, or ignore behavior."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "spc:web-storage-attribution-state-requirements",
+  "number": 2009,
+  "slug": "web-storage-attribution-state-requirements",
+  "title": "Web Storage Attribution State Requirements",
+  "status": "active",
+  "supersedes": [],
+  "superseded_by": [],
+  "spec_kind": "governance",
+  "adr_ids": [
+    "adr:attribution-state-context-policy"
+  ],
+  "primary_targets": [
+    "Web Storage"
+  ],
+  "scope": {
+    "governs": [
+      "localStorage attribution context",
+      "sessionStorage attribution context",
+      "Unavailable, disabled, cleared, and malformed storage states"
+    ],
+    "excludes": [
+      "Cookie behavior",
+      "Consent validity for browser storage",
+      "Application cache or IndexedDB governance"
+    ]
+  },
+  "requirements": [
+    "Implementations MUST distinguish localStorage-backed attribution state from sessionStorage-backed attribution state.",
+    "Implementations MUST define storage key names, value shapes, expiry strategy, and clearing behavior when Web Storage is used.",
+    "Implementations MUST handle unavailable, disabled, cleared, and malformed storage as explicit runtime states.",
+    "Implementations MUST keep Web Storage attribution evidence separate from cookie attribution evidence."
+  ],
+  "evidence_expectations": [
+    "Browser storage fixtures for localStorage and sessionStorage.",
+    "Runtime examples for stored, missing, cleared, disabled, and malformed storage values.",
+    "Validation output showing storage-backed attribution state extraction or intentional absence."
+  ]
+}
