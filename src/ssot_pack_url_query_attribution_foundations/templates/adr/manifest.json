@@ -1,0 +1,38 @@
+[
+  {
+    "id": "adr:url-query-attribution-boundary",
+    "number": 1001,
+    "slug": "url-query-attribution-boundary",
+    "title": "URL Query Attribution Boundary",
+    "filename": "ADR-1001-url-query-attribution-boundary.yaml",
+    "target_path": ".ssot/adr/ADR-1001-url-query-attribution-boundary.yaml",
+    "sha256": "425da7825197a9474786a49ca75a28f31c2e54dde441a81abe6311c57585272a",
+    "origin": "extension-pack",
+    "reservation_owner": "extension-pack:ssot-pack-url-query-attribution-foundations",
+    "immutable": true,
+    "minimum_schema_version": "0.4.0",
+    "introduced_in": "0.1.0",
+    "status": "accepted",
+    "supersedes": [],
+    "superseded_by": [],
+    "status_notes": []
+  },
+  {
+    "id": "adr:referrer-and-campaign-capture-policy",
+    "number": 1002,
+    "slug": "referrer-and-campaign-capture-policy",
+    "title": "Referrer And Campaign Capture Policy",
+    "filename": "ADR-1002-referrer-and-campaign-capture-policy.yaml",
+    "target_path": ".ssot/adr/ADR-1002-referrer-and-campaign-capture-policy.yaml",
+    "sha256": "24f17ccb79c7de128eddf3e6940e8996c179ddfe51c1e6fd5944066dfb3971e0",
+    "origin": "extension-pack",
+    "reservation_owner": "extension-pack:ssot-pack-url-query-attribution-foundations",
+    "immutable": true,
+    "minimum_schema_version": "0.4.0",
+    "introduced_in": "0.1.0",
+    "status": "accepted",
+    "supersedes": [],
+    "superseded_by": [],
+    "status_notes": []
+  }
+]

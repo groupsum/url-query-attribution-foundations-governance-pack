@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "ssot_package_name": "ssot-pack-url-query-attribution-foundations",
+  "origin": {
+    "id": "pack:url-query-attribution-foundations",
+    "package_name": "ssot-pack-url-query-attribution-foundations",
+    "import_name": "ssot_pack_url_query_attribution_foundations",
+    "kind": "governance-pack",
+    "title": "URL, Query, Referrer, And Campaign Parameter Foundations",
+    "description": "Installable SSOT governance pack for URL query parameters, referrer context, UTM conventions, and campaign attribution capture.",
+    "homepage": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack",
+    "repository": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
+  },
+  "compatibility": {
+    "python": ">=3.10,<3.15",
+    "ssot_registry_schema": ">=0.4.0",
+    "ssot_pack_contract": ">=0.2.17,<0.3.0"
+  },
+  "trust": {
+    "trusted_by_default": false,
+    "origin": "extension-pack",
+    "reservation_owner": "extension-pack:ssot-pack-url-query-attribution-foundations"
+  },
+  "documents": {
+    "adr": {
+      "manifest_path": "templates/adr/manifest.json"
+    },
+    "spec": {
+      "manifest_path": "templates/specs/manifest.json"
+    }
+  }
+}
