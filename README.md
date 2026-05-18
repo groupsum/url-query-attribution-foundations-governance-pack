@@ -47,27 +47,27 @@ URL, Query, Referrer, And Campaign Parameter Foundations
 
 ## Included ADRs
 
-- `adr:uri-query-attribution-boundary` - URI Query Attribution Boundary
-- `adr:campaign-parameter-semantics-authority` - Campaign Parameter Semantics Authority
-- `adr:traffic-source-classification-policy` - Traffic Source Classification Policy
-- `adr:referrer-observability-policy` - Referrer Observability Policy
-- `adr:attribution-state-context-policy` - Attribution State Context Policy
-- `adr:http-metadata-discovery-policy` - HTTP Metadata Discovery Policy
+- [`adr:uri-query-attribution-boundary`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/adr/ADR-1001-uri-query-attribution-boundary.yaml) - URI Query Attribution Boundary
+- [`adr:campaign-parameter-semantics-authority`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/adr/ADR-1002-campaign-parameter-semantics-authority.yaml) - Campaign Parameter Semantics Authority
+- [`adr:traffic-source-classification-policy`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/adr/ADR-1003-traffic-source-classification-policy.yaml) - Traffic Source Classification Policy
+- [`adr:referrer-observability-policy`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/adr/ADR-1004-referrer-observability-policy.yaml) - Referrer Observability Policy
+- [`adr:attribution-state-context-policy`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/adr/ADR-1005-attribution-state-context-policy.yaml) - Attribution State Context Policy
+- [`adr:http-metadata-discovery-policy`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/adr/ADR-1006-http-metadata-discovery-policy.yaml) - HTTP Metadata Discovery Policy
 
 ## Included SPECs
 
-- `spc:uri-query-syntax-requirements` - URI Query Syntax Requirements
-- `spc:campaign-query-parameter-requirements` - Campaign Query Parameter Requirements
-- `spc:ga4-traffic-source-mapping-requirements` - GA4 Traffic Source Mapping Requirements
-- `spc:default-channel-classification-requirements` - Default Channel Classification Requirements
-- `spc:http-request-attribution-context-requirements` - HTTP Request Attribution Context Requirements
-- `spc:referrer-policy-observability-requirements` - Referrer Policy Observability Requirements
-- `spc:fetch-navigation-attribution-context-requirements` - Fetch And Navigation Attribution Context Requirements
-- `spc:cookie-attribution-state-requirements` - Cookie Attribution State Requirements
-- `spc:web-storage-attribution-state-requirements` - Web Storage Attribution State Requirements
-- `spc:http-caching-attribution-observability-requirements` - HTTP Caching Attribution Observability Requirements
-- `spc:structured-field-attribution-metadata-requirements` - Structured Field Attribution Metadata Requirements
-- `spc:well-known-attribution-metadata-requirements` - Well-Known Attribution Metadata Requirements
+- [`spc:uri-query-syntax-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2001-uri-query-syntax-requirements.yaml) - URI Query Syntax Requirements
+- [`spc:campaign-query-parameter-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2002-campaign-query-parameter-requirements.yaml) - Campaign Query Parameter Requirements
+- [`spc:ga4-traffic-source-mapping-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2003-ga4-traffic-source-mapping-requirements.yaml) - GA4 Traffic Source Mapping Requirements
+- [`spc:default-channel-classification-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2004-default-channel-classification-requirements.yaml) - Default Channel Classification Requirements
+- [`spc:http-request-attribution-context-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2005-http-request-attribution-context-requirements.yaml) - HTTP Request Attribution Context Requirements
+- [`spc:referrer-policy-observability-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2006-referrer-policy-observability-requirements.yaml) - Referrer Policy Observability Requirements
+- [`spc:fetch-navigation-attribution-context-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2007-fetch-navigation-attribution-context-requirements.yaml) - Fetch And Navigation Attribution Context Requirements
+- [`spc:cookie-attribution-state-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2008-cookie-attribution-state-requirements.yaml) - Cookie Attribution State Requirements
+- [`spc:web-storage-attribution-state-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2009-web-storage-attribution-state-requirements.yaml) - Web Storage Attribution State Requirements
+- [`spc:http-caching-attribution-observability-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2010-http-caching-attribution-observability-requirements.yaml) - HTTP Caching Attribution Observability Requirements
+- [`spc:structured-field-attribution-metadata-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2011-structured-field-attribution-metadata-requirements.yaml) - Structured Field Attribution Metadata Requirements
+- [`spc:well-known-attribution-metadata-requirements`](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/src/ssot_pack_url_query_attribution_foundations/templates/specs/SPEC-2012-well-known-attribution-metadata-requirements.yaml) - Well-Known Attribution Metadata Requirements
 
 ## Install With uv
 
