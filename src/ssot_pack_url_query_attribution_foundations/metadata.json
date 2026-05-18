@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "ssot_package_name": "ssot-pack-url-query-attribution-foundations",
+  "ssot_package_name": "url-query-attribution-foundations-governance-pack",
   "origin": {
     "id": "pack:url-query-attribution-foundations",
-    "package_name": "ssot-pack-url-query-attribution-foundations",
+    "package_name": "url-query-attribution-foundations-governance-pack",
     "import_name": "ssot_pack_url_query_attribution_foundations",
     "kind": "governance-pack",
     "title": "URL, Query, Referrer, And Campaign Parameter Foundations",
@@ -19,7 +19,7 @@
   "trust": {
     "trusted_by_default": false,
     "origin": "extension-pack",
-    "reservation_owner": "extension-pack:ssot-pack-url-query-attribution-foundations"
+    "reservation_owner": "extension-pack:url-query-attribution-foundations-governance-pack"
   },
   "documents": {
     "adr": {

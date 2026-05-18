@@ -3,7 +3,7 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ssot-pack-url-query-attribution-foundations"
+name = "url-query-attribution-foundations-governance-pack"
 version = "0.1.0"
 description = "Installable SSOT governance pack for URL query parameters, referrer context, UTM conventions, and campaign attribution capture."
 readme = "README.md"
@@ -44,9 +44,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/groupsum/ssot-pack-url-query-attribution-foundations"
-Repository = "https://github.com/groupsum/ssot-pack-url-query-attribution-foundations"
-Issues = "https://github.com/groupsum/ssot-pack-url-query-attribution-foundations/issues"
+Homepage = "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
+Repository = "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
+Issues = "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

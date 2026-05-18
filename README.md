@@ -1,4 +1,4 @@
-# ssot-pack-url-query-attribution-foundations
+# url-query-attribution-foundations-governance-pack
 
 Installable SSOT governance pack for URL query parameters, referrer context, UTM conventions, and campaign attribution capture.
 
@@ -8,10 +8,10 @@ This repository is an installable SSOT Registry governance pack. It packages imm
 
 - Pack ID: `pack:url-query-attribution-foundations`
 - Priority: `P0.1`
-- PyPI package: `ssot-pack-url-query-attribution-foundations`
+- PyPI package: `url-query-attribution-foundations-governance-pack`
 - Import package: `ssot_pack_url_query_attribution_foundations`
 - GitHub repository: `groupsum/url-query-attribution-foundations-governance-pack`
-- Reservation owner: `extension-pack:ssot-pack-url-query-attribution-foundations`
+- Reservation owner: `extension-pack:url-query-attribution-foundations-governance-pack`
 
 ## Domain Focus
 
@@ -52,15 +52,15 @@ URL, Query, Referrer, And Campaign Parameter Foundations
 ## Install With uv
 
 ```bash
-uv add ssot-pack-url-query-attribution-foundations
-uv add ssot-registry ssot-pack-url-query-attribution-foundations
+uv add url-query-attribution-foundations-governance-pack
+uv add ssot-registry url-query-attribution-foundations-governance-pack
 ```
 
 ## Use With The SSOT Registry CLI
 
 ```bash
-uvx --from ssot-registry ssot pack install ssot-pack-url-query-attribution-foundations
-uvx --from ssot-registry ssot pack sync . ssot-pack-url-query-attribution-foundations
+uvx --from ssot-registry ssot pack install url-query-attribution-foundations-governance-pack
+uvx --from ssot-registry ssot pack sync . url-query-attribution-foundations-governance-pack
 uv run ssot adr list .
 uv run ssot spec list .
 ```
@@ -77,5 +77,5 @@ spec_manifest = load_document_manifest("spec")
 ## Resources
 
 - GitHub repository: https://github.com/groupsum/url-query-attribution-foundations-governance-pack
-- PyPI package: https://pypi.org/project/ssot-pack-url-query-attribution-foundations/
+- PyPI package: https://pypi.org/project/url-query-attribution-foundations-governance-pack/
 - SSOT Registry: https://pypi.org/project/ssot-registry/
