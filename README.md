@@ -33,7 +33,7 @@ Use this package when a downstream repository needs to answer: which standards, 
 - Pack ID: `pack:url-query-attribution-foundations`
 - PyPI package: `url-query-attribution-foundations-governance-pack`
 - Import package: `ssot_pack_url_query_attribution_foundations`
-- GitHub repository: `groupsum/url-query-attribution-foundations-governance-pack`
+- GitHub repository: [groupsum/url-query-attribution-foundations-governance-pack](https://github.com/groupsum/url-query-attribution-foundations-governance-pack)
 - Reservation owner: `extension-pack:url-query-attribution-foundations-governance-pack`
 
 ## Domain Focus
