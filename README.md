@@ -1,10 +1,13 @@
+<div align="center">
+
 # url-query-attribution-foundations-governance-pack
 
 [![PyPI version](https://img.shields.io/pypi/v/url-query-attribution-foundations-governance-pack.svg)](https://pypi.org/project/url-query-attribution-foundations-governance-pack/)
 [![Python versions](https://img.shields.io/pypi/pyversions/url-query-attribution-foundations-governance-pack.svg)](https://pypi.org/project/url-query-attribution-foundations-governance-pack/)
 [![License](https://img.shields.io/pypi/l/url-query-attribution-foundations-governance-pack.svg)](https://pypi.org/project/url-query-attribution-foundations-governance-pack/)
 [![Publish](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/actions/workflows/publish.yml/badge.svg)](https://github.com/groupsum/url-query-attribution-foundations-governance-pack/actions/workflows/publish.yml)
-[![GitHub package](https://img.shields.io/badge/GitHub-package-24292f)](https://github.com/groupsum/url-query-attribution-foundations-governance-pack)
+
+</div>
 
 Installable SSOT governance pack for URL query parameters, referrer context, UTM conventions, and campaign attribution capture.
 
