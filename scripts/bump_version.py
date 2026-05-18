@@ -106,7 +106,7 @@ def main() -> int:
     parser.add_argument("--pyproject", default="pyproject.toml")
     parser.add_argument(
         "--version-file",
-        default="src/ssot_registry_pack_template/__init__.py",
+        default="src/ssot_pack_url_query_attribution_foundations/__init__.py",
     )
     parser.add_argument("--changelog", default="CHANGELOG.md")
     parser.add_argument("--write", action="store_true")
