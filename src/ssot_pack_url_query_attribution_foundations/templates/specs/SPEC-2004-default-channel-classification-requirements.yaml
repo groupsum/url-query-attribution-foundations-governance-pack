@@ -1,41 +1,24 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "spec",
   "id": "spc:default-channel-classification-requirements",
   "number": 2004,
   "slug": "default-channel-classification-requirements",
   "title": "Default Channel Classification Requirements",
-  "status": "active",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Implementations MUST define the channel classification target set they claim to support.",
   "supersedes": [],
   "superseded_by": [],
+  "status_notes": [],
+  "references": [],
+  "body": "## Primary Targets\n\n- GA4 default channel group\n\n## Scope\n\n- Governs:\n  - Default-channel classification from source, medium, campaign, and referrer context\n  - Classification evidence for direct, referral, organic, paid, and unassigned outcomes where downstream scope includes them\n  - Classification fallback behavior when campaign or referrer context is incomplete\n- Excludes:\n  - Custom channel group administration\n  - Cross-channel attribution modeling\n  - Advertising platform billing or reporting\n\n## Requirements\n\n- Implementations MUST define the channel classification target set they claim to support.\n- Implementations MUST keep classification input evidence distinct from classification output evidence.\n- Implementations MUST handle missing source, missing medium, absent referrer, and conflicting campaign context as explicit test cases.\n- Implementations MUST identify whether classification is intended to align with GA4 default channel group behavior or a downstream subset.\n\n## Evidence Expectations\n\n- Fixture rows pairing source, medium, campaign, and referrer inputs with expected channel outputs.\n- Negative or fallback fixtures for direct, unassigned, and incomplete context.\n- Validation report explaining any intentional subset of GA4 channel behavior.\n",
   "spec_kind": "governance",
   "adr_ids": [
     "adr:traffic-source-classification-policy",
     "adr:campaign-parameter-semantics-authority",
     "adr:referrer-observability-policy"
-  ],
-  "primary_targets": [
-    "GA4 default channel group"
-  ],
-  "scope": {
-    "governs": [
-      "Default-channel classification from source, medium, campaign, and referrer context",
-      "Classification evidence for direct, referral, organic, paid, and unassigned outcomes where downstream scope includes them",
-      "Classification fallback behavior when campaign or referrer context is incomplete"
-    ],
-    "excludes": [
-      "Custom channel group administration",
-      "Cross-channel attribution modeling",
-      "Advertising platform billing or reporting"
-    ]
-  },
-  "requirements": [
-    "Implementations MUST define the channel classification target set they claim to support.",
-    "Implementations MUST keep classification input evidence distinct from classification output evidence.",
-    "Implementations MUST handle missing source, missing medium, absent referrer, and conflicting campaign context as explicit test cases.",
-    "Implementations MUST identify whether classification is intended to align with GA4 default channel group behavior or a downstream subset."
-  ],
-  "evidence_expectations": [
-    "Fixture rows pairing source, medium, campaign, and referrer inputs with expected channel outputs.",
-    "Negative or fallback fixtures for direct, unassigned, and incomplete context.",
-    "Validation report explaining any intentional subset of GA4 channel behavior."
   ]
 }

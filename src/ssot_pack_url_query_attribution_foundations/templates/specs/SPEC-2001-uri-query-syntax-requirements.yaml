@@ -1,40 +1,22 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "spec",
   "id": "spc:uri-query-syntax-requirements",
   "number": 2001,
   "slug": "uri-query-syntax-requirements",
   "title": "URI Query Syntax Requirements",
-  "status": "active",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Implementations MUST parse attribution-relevant landing-page URLs using a declared URI or URL parser authority.",
   "supersedes": [],
   "superseded_by": [],
+  "status_notes": [],
+  "references": [],
+  "body": "## Primary Targets\n\n- RFC 3986: Uniform Resource Identifier (URI): Generic Syntax\n- WHATWG URL Standard\n\n## Scope\n\n- Governs:\n  - Attribution-relevant URI and URL query parsing\n  - Percent-encoding and query component preservation\n  - Repeated, empty, unknown, and malformed query parameter handling\n- Excludes:\n  - Campaign parameter business meaning\n  - Analytics event collection\n  - Advertising conversion APIs\n\n## Requirements\n\n- Implementations MUST parse attribution-relevant landing-page URLs using a declared URI or URL parser authority.\n- Implementations MUST distinguish syntactically valid query parameters from campaign parameters with attribution meaning.\n- Implementations MUST preserve enough original query evidence to debug normalization, decoding, duplicate-key behavior, and malformed input handling.\n- Implementations MUST document whether RFC 3986 parsing, WHATWG URL parsing, or both are used for downstream conformance claims.\n\n## Evidence Expectations\n\n- Fixture URLs covering valid, repeated, empty, percent-encoded, unknown, and malformed query members.\n- Parser output showing raw and normalized query representations.\n- Validation report identifying the parser authority used by the implementation.\n",
   "spec_kind": "governance",
   "adr_ids": [
     "adr:uri-query-attribution-boundary"
-  ],
-  "primary_targets": [
-    "RFC 3986: Uniform Resource Identifier (URI): Generic Syntax",
-    "WHATWG URL Standard"
-  ],
-  "scope": {
-    "governs": [
-      "Attribution-relevant URI and URL query parsing",
-      "Percent-encoding and query component preservation",
-      "Repeated, empty, unknown, and malformed query parameter handling"
-    ],
-    "excludes": [
-      "Campaign parameter business meaning",
-      "Analytics event collection",
-      "Advertising conversion APIs"
-    ]
-  },
-  "requirements": [
-    "Implementations MUST parse attribution-relevant landing-page URLs using a declared URI or URL parser authority.",
-    "Implementations MUST distinguish syntactically valid query parameters from campaign parameters with attribution meaning.",
-    "Implementations MUST preserve enough original query evidence to debug normalization, decoding, duplicate-key behavior, and malformed input handling.",
-    "Implementations MUST document whether RFC 3986 parsing, WHATWG URL parsing, or both are used for downstream conformance claims."
-  ],
-  "evidence_expectations": [
-    "Fixture URLs covering valid, repeated, empty, percent-encoded, unknown, and malformed query members.",
-    "Parser output showing raw and normalized query representations.",
-    "Validation report identifying the parser authority used by the implementation."
   ]
 }

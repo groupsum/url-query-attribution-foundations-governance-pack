@@ -1,37 +1,18 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "adr",
   "id": "adr:http-metadata-discovery-policy",
   "number": 1006,
   "slug": "http-metadata-discovery-policy",
   "title": "HTTP Metadata Discovery Policy",
   "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "This repository treats well-known URIs and structured HTTP fields as optional attribution metadata discovery mechanisms.",
   "supersedes": [],
   "superseded_by": [],
-  "context": [
-    "Some downstream systems expose or consume machine-readable metadata related to attribution, measurement, or collection capabilities.",
-    "HTTP structured fields and well-known URIs provide generic mechanisms for interoperable metadata exchange.",
-    "These mechanisms are infrastructure support surfaces and do not define campaign parameter or GA4 semantics."
-  ],
-  "authority_sources": [
-    "RFC 8615: Well-Known Uniform Resource Identifiers",
-    "RFC 8941: Structured Field Values for HTTP",
-    "RFC 9110: HTTP Semantics"
-  ],
-  "decision": [
-    "This repository treats well-known URIs and structured HTTP fields as optional attribution metadata discovery mechanisms.",
-    "RFC 8615 is the authority for well-known URI discovery patterns.",
-    "RFC 8941 is the authority for structured HTTP field parsing and serialization.",
-    "RFC 9110 is the authority for HTTP semantics around requests, responses, fields, and resources.",
-    "Implementations must state whether they consume, emit, preserve, or validate metadata that uses these mechanisms."
-  ],
-  "consequences": [
-    "Implementations can support machine-readable attribution metadata without treating that support as required campaign parameter behavior.",
-    "Implementations must not define new well-known names or HTTP fields without a separate downstream decision and registration strategy.",
-    "Tests should cover present metadata, absent metadata, malformed structured fields, and unsupported discovery endpoints."
-  ],
-  "exclusions": [
-    "Defining new IANA well-known URI registrations",
-    "Defining new permanent HTTP field names",
-    "Campaign query parameter semantics",
-    "GA4 event or export schema governance"
-  ]
+  "status_notes": [],
+  "references": [],
+  "body": "## Authority Sources\n\n- RFC 8615: Well-Known Uniform Resource Identifiers\n- RFC 8941: Structured Field Values for HTTP\n- RFC 9110: HTTP Semantics\n\n## Context\n\n- Some downstream systems expose or consume machine-readable metadata related to attribution, measurement, or collection capabilities.\n- HTTP structured fields and well-known URIs provide generic mechanisms for interoperable metadata exchange.\n- These mechanisms are infrastructure support surfaces and do not define campaign parameter or GA4 semantics.\n\n## Decision\n\n- This repository treats well-known URIs and structured HTTP fields as optional attribution metadata discovery mechanisms.\n- RFC 8615 is the authority for well-known URI discovery patterns.\n- RFC 8941 is the authority for structured HTTP field parsing and serialization.\n- RFC 9110 is the authority for HTTP semantics around requests, responses, fields, and resources.\n- Implementations must state whether they consume, emit, preserve, or validate metadata that uses these mechanisms.\n\n## Exclusions\n\n- Defining new IANA well-known URI registrations\n- Defining new permanent HTTP field names\n- Campaign query parameter semantics\n- GA4 event or export schema governance\n\n## Consequences\n\n- Implementations can support machine-readable attribution metadata without treating that support as required campaign parameter behavior.\n- Implementations must not define new well-known names or HTTP fields without a separate downstream decision and registration strategy.\n- Tests should cover present metadata, absent metadata, malformed structured fields, and unsupported discovery endpoints.\n"
 }

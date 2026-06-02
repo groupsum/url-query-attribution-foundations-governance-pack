@@ -1,40 +1,23 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "spec",
   "id": "spc:campaign-query-parameter-requirements",
   "number": 2002,
   "slug": "campaign-query-parameter-requirements",
   "title": "Campaign Query Parameter Requirements",
-  "status": "active",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Implementations MUST recognize utm_source, utm_medium, utm_campaign, utm_id, utm_term, and utm_content when those fields are in downstream scope.",
   "supersedes": [],
   "superseded_by": [],
+  "status_notes": [],
+  "references": [],
+  "body": "## Primary Targets\n\n- Google Analytics: Collect campaign data with custom URLs\n\n## Scope\n\n- Governs:\n  - UTM campaign parameter recognition\n  - Campaign parameter field mapping\n  - Required and optional campaign parameter evidence\n- Excludes:\n  - Google tag runtime commands\n  - GA4 event ingestion\n  - Ad click identifier upload APIs\n\n## Requirements\n\n- Implementations MUST recognize utm_source, utm_medium, utm_campaign, utm_id, utm_term, and utm_content when those fields are in downstream scope.\n- Implementations MUST keep campaign parameter semantic mapping separate from URL parser validity.\n- Implementations MUST define how duplicate campaign parameters, empty campaign values, missing campaign values, and unknown query parameters are handled.\n- Implementations SHOULD preserve non-campaign query parameters unless a downstream filtering requirement explicitly removes them.\n\n## Evidence Expectations\n\n- Fixture URLs containing each governed campaign parameter.\n- Mapping output from query parameters to downstream campaign fields.\n- Negative fixtures covering absent, duplicate, empty, and unknown query members.\n",
   "spec_kind": "governance",
   "adr_ids": [
     "adr:campaign-parameter-semantics-authority",
     "adr:uri-query-attribution-boundary"
-  ],
-  "primary_targets": [
-    "Google Analytics: Collect campaign data with custom URLs"
-  ],
-  "scope": {
-    "governs": [
-      "UTM campaign parameter recognition",
-      "Campaign parameter field mapping",
-      "Required and optional campaign parameter evidence"
-    ],
-    "excludes": [
-      "Google tag runtime commands",
-      "GA4 event ingestion",
-      "Ad click identifier upload APIs"
-    ]
-  },
-  "requirements": [
-    "Implementations MUST recognize utm_source, utm_medium, utm_campaign, utm_id, utm_term, and utm_content when those fields are in downstream scope.",
-    "Implementations MUST keep campaign parameter semantic mapping separate from URL parser validity.",
-    "Implementations MUST define how duplicate campaign parameters, empty campaign values, missing campaign values, and unknown query parameters are handled.",
-    "Implementations SHOULD preserve non-campaign query parameters unless a downstream filtering requirement explicitly removes them."
-  ],
-  "evidence_expectations": [
-    "Fixture URLs containing each governed campaign parameter.",
-    "Mapping output from query parameters to downstream campaign fields.",
-    "Negative fixtures covering absent, duplicate, empty, and unknown query members."
   ]
 }

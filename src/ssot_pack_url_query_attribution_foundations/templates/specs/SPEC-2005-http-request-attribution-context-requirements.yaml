@@ -1,40 +1,23 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "spec",
   "id": "spc:http-request-attribution-context-requirements",
   "number": 2005,
   "slug": "http-request-attribution-context-requirements",
   "title": "HTTP Request Attribution Context Requirements",
-  "status": "active",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Implementations MUST identify which HTTP request and response fields are attribution inputs.",
   "supersedes": [],
   "superseded_by": [],
+  "status_notes": [],
+  "references": [],
+  "body": "## Primary Targets\n\n- RFC 9110: HTTP Semantics\n\n## Scope\n\n- Governs:\n  - HTTP request context used for attribution observation\n  - Target URI, method, host, headers, redirects, and response context where used by downstream attribution logic\n  - Evidence boundaries between request observation and analytics interpretation\n- Excludes:\n  - Full HTTP server conformance\n  - Browser event collection\n  - Consent authorization for request observation\n\n## Requirements\n\n- Implementations MUST identify which HTTP request and response fields are attribution inputs.\n- Implementations MUST preserve enough request evidence to distinguish query capture, referrer capture, redirect behavior, and header-derived context.\n- Implementations MUST document how redirect chains affect attribution context capture when redirects are in downstream scope.\n- Implementations MUST treat HTTP context as observation evidence, not as proof of user identity.\n\n## Evidence Expectations\n\n- HTTP request and response fixtures containing target URI, headers, and redirect examples.\n- Runtime logs or parser output showing extracted attribution context.\n- Validation cases for missing or malformed HTTP context.\n",
   "spec_kind": "governance",
   "adr_ids": [
     "adr:referrer-observability-policy",
     "adr:http-metadata-discovery-policy"
-  ],
-  "primary_targets": [
-    "RFC 9110: HTTP Semantics"
-  ],
-  "scope": {
-    "governs": [
-      "HTTP request context used for attribution observation",
-      "Target URI, method, host, headers, redirects, and response context where used by downstream attribution logic",
-      "Evidence boundaries between request observation and analytics interpretation"
-    ],
-    "excludes": [
-      "Full HTTP server conformance",
-      "Browser event collection",
-      "Consent authorization for request observation"
-    ]
-  },
-  "requirements": [
-    "Implementations MUST identify which HTTP request and response fields are attribution inputs.",
-    "Implementations MUST preserve enough request evidence to distinguish query capture, referrer capture, redirect behavior, and header-derived context.",
-    "Implementations MUST document how redirect chains affect attribution context capture when redirects are in downstream scope.",
-    "Implementations MUST treat HTTP context as observation evidence, not as proof of user identity."
-  ],
-  "evidence_expectations": [
-    "HTTP request and response fixtures containing target URI, headers, and redirect examples.",
-    "Runtime logs or parser output showing extracted attribution context.",
-    "Validation cases for missing or malformed HTTP context."
   ]
 }

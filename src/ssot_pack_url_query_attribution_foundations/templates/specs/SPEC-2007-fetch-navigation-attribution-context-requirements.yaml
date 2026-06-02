@@ -1,41 +1,23 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "spec",
   "id": "spc:fetch-navigation-attribution-context-requirements",
   "number": 2007,
   "slug": "fetch-navigation-attribution-context-requirements",
   "title": "Fetch And Navigation Attribution Context Requirements",
-  "status": "active",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Implementations MUST distinguish browser navigation context from server-observed HTTP request context.",
   "supersedes": [],
   "superseded_by": [],
+  "status_notes": [],
+  "references": [],
+  "body": "## Primary Targets\n\n- WHATWG Fetch\n- WHATWG HTML navigation and referrer integration\n\n## Scope\n\n- Governs:\n  - Browser fetch and navigation context relevant to landing-page attribution\n  - Navigation, redirect, credentials, and referrer interactions where used downstream\n  - Client-side attribution context capture boundaries\n- Excludes:\n  - Application routing policy\n  - Analytics SDK event APIs\n  - Server-only HTTP parsing behavior\n\n## Requirements\n\n- Implementations MUST distinguish browser navigation context from server-observed HTTP request context.\n- Implementations MUST document how redirects, client-side navigation, and referrer integration affect attribution context when those behaviors are in downstream scope.\n- Implementations MUST keep URL parsing evidence separate from browser navigation evidence.\n- Implementations SHOULD test both initial page navigation and subsequent client-side navigation when both can affect attribution capture.\n\n## Evidence Expectations\n\n- Browser or simulated browser fixtures for landing-page navigation and redirect behavior.\n- Evidence showing captured URL, referrer, and navigation context.\n- Negative cases for unavailable browser context or unsupported client-side navigation capture.\n",
   "spec_kind": "governance",
   "adr_ids": [
     "adr:referrer-observability-policy",
     "adr:uri-query-attribution-boundary"
-  ],
-  "primary_targets": [
-    "WHATWG Fetch",
-    "WHATWG HTML navigation and referrer integration"
-  ],
-  "scope": {
-    "governs": [
-      "Browser fetch and navigation context relevant to landing-page attribution",
-      "Navigation, redirect, credentials, and referrer interactions where used downstream",
-      "Client-side attribution context capture boundaries"
-    ],
-    "excludes": [
-      "Application routing policy",
-      "Analytics SDK event APIs",
-      "Server-only HTTP parsing behavior"
-    ]
-  },
-  "requirements": [
-    "Implementations MUST distinguish browser navigation context from server-observed HTTP request context.",
-    "Implementations MUST document how redirects, client-side navigation, and referrer integration affect attribution context when those behaviors are in downstream scope.",
-    "Implementations MUST keep URL parsing evidence separate from browser navigation evidence.",
-    "Implementations SHOULD test both initial page navigation and subsequent client-side navigation when both can affect attribution capture."
-  ],
-  "evidence_expectations": [
-    "Browser or simulated browser fixtures for landing-page navigation and redirect behavior.",
-    "Evidence showing captured URL, referrer, and navigation context.",
-    "Negative cases for unavailable browser context or unsupported client-side navigation capture."
   ]
 }

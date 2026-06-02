@@ -1,40 +1,22 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "spec",
   "id": "spc:well-known-attribution-metadata-requirements",
   "number": 2012,
   "slug": "well-known-attribution-metadata-requirements",
   "title": "Well-Known Attribution Metadata Requirements",
-  "status": "active",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Implementations MUST declare whether well-known attribution metadata discovery is supported, unsupported, or out of scope.",
   "supersedes": [],
   "superseded_by": [],
+  "status_notes": [],
+  "references": [],
+  "body": "## Primary Targets\n\n- RFC 8615: Well-Known Uniform Resource Identifiers\n- RFC 9110: HTTP Semantics\n\n## Scope\n\n- Governs:\n  - Well-known URI discovery behavior for attribution-related metadata\n  - Present, absent, unsupported, malformed, and unreachable metadata discovery states\n  - Evidence for declared consume, emit, preserve, or validate behavior\n- Excludes:\n  - Defining new well-known URI registrations\n  - Campaign query parameter semantics\n  - Advertising supply-chain metadata\n\n## Requirements\n\n- Implementations MUST declare whether well-known attribution metadata discovery is supported, unsupported, or out of scope.\n- Implementations MUST use RFC 8615 well-known URI patterns when they expose or consume attribution-related well-known resources.\n- Implementations MUST handle present, absent, unsupported, malformed, and unreachable metadata endpoints as explicit outcomes.\n- Implementations MUST not require well-known metadata discovery for basic URL query attribution unless a downstream decision explicitly makes it mandatory.\n\n## Evidence Expectations\n\n- Discovery fixtures for present, absent, malformed, and unreachable well-known resources.\n- HTTP request and response traces for discovery behavior.\n- Validation report identifying consume, emit, preserve, validate, unsupported, or out-of-scope behavior.\n",
   "spec_kind": "governance",
   "adr_ids": [
     "adr:http-metadata-discovery-policy"
-  ],
-  "primary_targets": [
-    "RFC 8615: Well-Known Uniform Resource Identifiers",
-    "RFC 9110: HTTP Semantics"
-  ],
-  "scope": {
-    "governs": [
-      "Well-known URI discovery behavior for attribution-related metadata",
-      "Present, absent, unsupported, malformed, and unreachable metadata discovery states",
-      "Evidence for declared consume, emit, preserve, or validate behavior"
-    ],
-    "excludes": [
-      "Defining new well-known URI registrations",
-      "Campaign query parameter semantics",
-      "Advertising supply-chain metadata"
-    ]
-  },
-  "requirements": [
-    "Implementations MUST declare whether well-known attribution metadata discovery is supported, unsupported, or out of scope.",
-    "Implementations MUST use RFC 8615 well-known URI patterns when they expose or consume attribution-related well-known resources.",
-    "Implementations MUST handle present, absent, unsupported, malformed, and unreachable metadata endpoints as explicit outcomes.",
-    "Implementations MUST not require well-known metadata discovery for basic URL query attribution unless a downstream decision explicitly makes it mandatory."
-  ],
-  "evidence_expectations": [
-    "Discovery fixtures for present, absent, malformed, and unreachable well-known resources.",
-    "HTTP request and response traces for discovery behavior.",
-    "Validation report identifying consume, emit, preserve, validate, unsupported, or out-of-scope behavior."
   ]
 }

@@ -1,40 +1,23 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "spec",
   "id": "spc:http-caching-attribution-observability-requirements",
   "number": 2010,
   "slug": "http-caching-attribution-observability-requirements",
   "title": "HTTP Caching Attribution Observability Requirements",
-  "status": "active",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Implementations MUST identify whether cached responses can affect attribution context capture or evidence production.",
   "supersedes": [],
   "superseded_by": [],
+  "status_notes": [],
+  "references": [],
+  "body": "## Primary Targets\n\n- RFC 9111: HTTP Caching\n\n## Scope\n\n- Governs:\n  - Cache effects on attribution request and response observability\n  - Cache hit, cache miss, revalidation, and redirect evidence where downstream attribution depends on those states\n  - Diagnostics for attribution observations affected by HTTP caching\n- Excludes:\n  - Full HTTP cache implementation conformance\n  - CDN vendor-specific cache APIs\n  - Analytics event ingestion reliability\n\n## Requirements\n\n- Implementations MUST identify whether cached responses can affect attribution context capture or evidence production.\n- Implementations MUST distinguish cache-hit, cache-miss, and revalidation cases when those states affect downstream attribution behavior.\n- Implementations MUST document whether attribution parameters are captured before caching, after caching, or only from observed requests.\n- Implementations SHOULD provide evidence for redirect and cache interactions when both are in downstream scope.\n\n## Evidence Expectations\n\n- HTTP cache fixtures covering cache hit, cache miss, stale, and revalidated responses.\n- Request/response traces showing when attribution context was observed.\n- Validation output explaining attribution behavior when a request is served from cache.\n",
   "spec_kind": "governance",
   "adr_ids": [
     "adr:referrer-observability-policy",
     "adr:http-metadata-discovery-policy"
-  ],
-  "primary_targets": [
-    "RFC 9111: HTTP Caching"
-  ],
-  "scope": {
-    "governs": [
-      "Cache effects on attribution request and response observability",
-      "Cache hit, cache miss, revalidation, and redirect evidence where downstream attribution depends on those states",
-      "Diagnostics for attribution observations affected by HTTP caching"
-    ],
-    "excludes": [
-      "Full HTTP cache implementation conformance",
-      "CDN vendor-specific cache APIs",
-      "Analytics event ingestion reliability"
-    ]
-  },
-  "requirements": [
-    "Implementations MUST identify whether cached responses can affect attribution context capture or evidence production.",
-    "Implementations MUST distinguish cache-hit, cache-miss, and revalidation cases when those states affect downstream attribution behavior.",
-    "Implementations MUST document whether attribution parameters are captured before caching, after caching, or only from observed requests.",
-    "Implementations SHOULD provide evidence for redirect and cache interactions when both are in downstream scope."
-  ],
-  "evidence_expectations": [
-    "HTTP cache fixtures covering cache hit, cache miss, stale, and revalidated responses.",
-    "Request/response traces showing when attribution context was observed.",
-    "Validation output explaining attribution behavior when a request is served from cache."
   ]
 }

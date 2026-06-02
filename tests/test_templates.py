@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import unittest
 
 from ssot_pack_url_query_attribution_foundations import (
@@ -11,6 +12,31 @@ from ssot_pack_url_query_attribution_foundations import (
     load_pack_schema_version,
     read_packaged_document_text,
 )
+
+ADR_FIELDS = {
+    "schema_version",
+    "kind",
+    "id",
+    "number",
+    "slug",
+    "title",
+    "status",
+    "origin",
+    "summary",
+    "body",
+    "decision_date",
+    "references",
+    "supersedes",
+    "superseded_by",
+    "status_notes",
+    "tags",
+}
+SPEC_FIELDS = ADR_FIELDS | {"spec_kind", "adr_ids"}
+ADR_REQUIRED = {"schema_version", "kind", "id", "number", "slug", "title", "status", "origin", "summary", "body"}
+SPEC_REQUIRED = ADR_REQUIRED | {"spec_kind", "adr_ids"}
+STATUSES = {"draft", "in_review", "accepted", "rejected", "superseded", "withdrawn", "retired"}
+ORIGINS = {"ssot-core", "ssot-origin", "extension-pack", "repo-local"}
+SPEC_KINDS = {"normative", "operational", "governance", "local-policy"}
 
 
 class GovernancePackManifestTests(unittest.TestCase):
@@ -49,6 +75,29 @@ class GovernancePackManifestTests(unittest.TestCase):
             text = read_packaged_document_text("spec", row["filename"])
             self.assertNotIn("pack:", text)
             self.assertNotIn("This pack", text)
+
+    def test_packaged_documents_use_only_canonical_fields(self) -> None:
+        for row in load_document_manifest("adr"):
+            payload = json.loads(read_packaged_document_text("adr", row["filename"]))
+            self.assertEqual(set(payload), set(payload) & ADR_FIELDS)
+            self.assertTrue(ADR_REQUIRED <= set(payload))
+            self.assertEqual("adr", payload["kind"])
+            self.assertIn(payload["status"], STATUSES)
+            self.assertIn(payload["origin"], ORIGINS)
+            self.assertIsInstance(payload["summary"], str)
+            self.assertIsInstance(payload["body"], str)
+            self.assertTrue(all(isinstance(item, str) for item in payload["references"]))
+
+        for row in load_document_manifest("spec"):
+            payload = json.loads(read_packaged_document_text("spec", row["filename"]))
+            self.assertEqual(set(payload), set(payload) & SPEC_FIELDS)
+            self.assertTrue(SPEC_REQUIRED <= set(payload))
+            self.assertEqual("spec", payload["kind"])
+            self.assertIn(payload["status"], STATUSES)
+            self.assertIn(payload["origin"], ORIGINS)
+            self.assertIn(payload["spec_kind"], SPEC_KINDS)
+            self.assertIsInstance(payload["adr_ids"], list)
+            self.assertTrue(all(isinstance(item, str) for item in payload["references"]))
 
 
 if __name__ == "__main__":

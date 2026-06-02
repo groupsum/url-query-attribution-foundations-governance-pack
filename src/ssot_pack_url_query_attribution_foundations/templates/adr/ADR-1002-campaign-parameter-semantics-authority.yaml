@@ -1,35 +1,18 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "adr",
   "id": "adr:campaign-parameter-semantics-authority",
   "number": 1002,
   "slug": "campaign-parameter-semantics-authority",
   "title": "Campaign Parameter Semantics Authority",
   "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "This repository treats Google Analytics campaign URL parameter documentation as the practical authority for UTM campaign parameter semantics.",
   "supersedes": [],
   "superseded_by": [],
-  "context": [
-    "Campaign attribution systems commonly recognize UTM parameters and related manual tagging fields.",
-    "These fields are syntactically ordinary query parameters, while their operational meaning comes from analytics platform documentation.",
-    "Downstream repositories need an explicit decision for which sources define campaign parameter meaning."
-  ],
-  "authority_sources": [
-    "Google Analytics: Collect campaign data with custom URLs",
-    "GA4 traffic-source dimensions, manual tagging, and auto-tagging"
-  ],
-  "decision": [
-    "This repository treats Google Analytics campaign URL parameter documentation as the practical authority for UTM campaign parameter semantics.",
-    "The governed campaign parameter set includes utm_source, utm_medium, utm_campaign, utm_id, utm_term, and utm_content unless a downstream specification narrows scope.",
-    "GA4 manual tagging documentation is the authority for mapping recognized campaign parameters into GA4 traffic-source concepts.",
-    "Campaign parameter semantic claims must cite campaign documentation separately from URL syntax authorities."
-  ],
-  "consequences": [
-    "Implementations can recognize campaign parameters without treating them as URI-reserved names.",
-    "Implementations should preserve unknown query parameters unless a downstream requirement explicitly filters them.",
-    "Tests should cover required campaign fields, optional campaign fields, missing values, duplicate values, and non-UTM query parameters."
-  ],
-  "exclusions": [
-    "Full GA4 event collection",
-    "Google tag runtime behavior",
-    "Google Ads auto-tagging click identifiers",
-    "Offline conversion upload APIs"
-  ]
+  "status_notes": [],
+  "references": [],
+  "body": "## Authority Sources\n\n- Google Analytics: Collect campaign data with custom URLs\n- GA4 traffic-source dimensions, manual tagging, and auto-tagging\n\n## Context\n\n- Campaign attribution systems commonly recognize UTM parameters and related manual tagging fields.\n- These fields are syntactically ordinary query parameters, while their operational meaning comes from analytics platform documentation.\n- Downstream repositories need an explicit decision for which sources define campaign parameter meaning.\n\n## Decision\n\n- This repository treats Google Analytics campaign URL parameter documentation as the practical authority for UTM campaign parameter semantics.\n- The governed campaign parameter set includes utm_source, utm_medium, utm_campaign, utm_id, utm_term, and utm_content unless a downstream specification narrows scope.\n- GA4 manual tagging documentation is the authority for mapping recognized campaign parameters into GA4 traffic-source concepts.\n- Campaign parameter semantic claims must cite campaign documentation separately from URL syntax authorities.\n\n## Exclusions\n\n- Full GA4 event collection\n- Google tag runtime behavior\n- Google Ads auto-tagging click identifiers\n- Offline conversion upload APIs\n\n## Consequences\n\n- Implementations can recognize campaign parameters without treating them as URI-reserved names.\n- Implementations should preserve unknown query parameters unless a downstream requirement explicitly filters them.\n- Tests should cover required campaign fields, optional campaign fields, missing values, duplicate values, and non-UTM query parameters.\n"
 }

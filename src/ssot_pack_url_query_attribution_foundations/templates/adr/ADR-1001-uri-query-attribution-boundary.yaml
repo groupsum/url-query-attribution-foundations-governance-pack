@@ -1,35 +1,18 @@
 {
+  "schema_version": "0.1.0",
+  "kind": "adr",
   "id": "adr:uri-query-attribution-boundary",
   "number": 1001,
   "slug": "uri-query-attribution-boundary",
   "title": "URI Query Attribution Boundary",
   "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "This repository treats attribution-relevant query handling as a governed boundary between URL syntax and application-defined campaign semantics.",
   "supersedes": [],
   "superseded_by": [],
-  "context": [
-    "Campaign attribution commonly depends on query parameters carried in landing-page URLs.",
-    "URI and URL standards define syntax, parsing, encoding, and query handling, but they do not define the business meaning of campaign parameters such as utm_source.",
-    "Downstream repositories need a durable decision that separates syntactic URL handling from analytics attribution semantics."
-  ],
-  "authority_sources": [
-    "RFC 3986: Uniform Resource Identifier (URI): Generic Syntax",
-    "WHATWG URL Standard"
-  ],
-  "decision": [
-    "This repository treats attribution-relevant query handling as a governed boundary between URL syntax and application-defined campaign semantics.",
-    "RFC 3986 is the generic URI syntax authority for query components.",
-    "The WHATWG URL Standard is the browser URL parsing and URLSearchParams authority.",
-    "Attribution parameter meaning must be governed by separate campaign semantics decisions or specifications, not inferred from URI syntax alone."
-  ],
-  "consequences": [
-    "Implementations can validate, parse, preserve, normalize, and reject attribution query strings using URL authorities.",
-    "Implementations must not claim that RFC 3986 or WHATWG reserves or defines UTM parameter semantics.",
-    "Tests should include valid query strings, encoded values, repeated parameters, empty values, malformed encodings, and parser-specific normalization outcomes."
-  ],
-  "exclusions": [
-    "Analytics event collection APIs",
-    "Advertising conversion APIs",
-    "Consent and privacy-law authority",
-    "Vendor-specific campaign classification behavior"
-  ]
+  "status_notes": [],
+  "references": [],
+  "body": "## Authority Sources\n\n- RFC 3986: Uniform Resource Identifier (URI): Generic Syntax\n- WHATWG URL Standard\n\n## Context\n\n- Campaign attribution commonly depends on query parameters carried in landing-page URLs.\n- URI and URL standards define syntax, parsing, encoding, and query handling, but they do not define the business meaning of campaign parameters such as utm_source.\n- Downstream repositories need a durable decision that separates syntactic URL handling from analytics attribution semantics.\n\n## Decision\n\n- This repository treats attribution-relevant query handling as a governed boundary between URL syntax and application-defined campaign semantics.\n- RFC 3986 is the generic URI syntax authority for query components.\n- The WHATWG URL Standard is the browser URL parsing and URLSearchParams authority.\n- Attribution parameter meaning must be governed by separate campaign semantics decisions or specifications, not inferred from URI syntax alone.\n\n## Exclusions\n\n- Analytics event collection APIs\n- Advertising conversion APIs\n- Consent and privacy-law authority\n- Vendor-specific campaign classification behavior\n\n## Consequences\n\n- Implementations can validate, parse, preserve, normalize, and reject attribution query strings using URL authorities.\n- Implementations must not claim that RFC 3986 or WHATWG reserves or defines UTM parameter semantics.\n- Tests should include valid query strings, encoded values, repeated parameters, empty values, malformed encodings, and parser-specific normalization outcomes.\n"
 }
