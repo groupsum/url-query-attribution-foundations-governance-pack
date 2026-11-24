@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "url-query-attribution-foundations-governance-pack"
-version = "0.1.1"
+version = "0.1.2.dev1"
 description = "Installable SSOT governance pack for URL query parameters, referrer context, UTM conventions, and campaign attribution capture."
 readme = "README.md"
 requires-python = ">=3.10,<3.15"
